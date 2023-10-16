@@ -10,7 +10,7 @@ public class C extends A {
 
     void input1() throws IOException {
 
-        // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // System.out.println("Enter the nteger");
 
