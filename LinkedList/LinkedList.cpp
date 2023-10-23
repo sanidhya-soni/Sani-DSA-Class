@@ -17,7 +17,6 @@ class Node {
 };
 
 Node* createLinkedList() {
-
     Node* head = nullptr, *temp = nullptr;
     int x;
     bool yesOrNo = 1;
@@ -100,6 +99,50 @@ Node* deleteFromBeginning(Node* head) {
     }
     head = head->next;
     return head;
+}
+
+Node* deleteFromParticularPosition(Node* head) {
+    cout << "Enter the position: " << endl;
+    int pos;
+    cin >> pos;
+
+    if(pos == 1) {
+        return deleteFromBeginning(head);
+    }
+
+    Node* temp = head;
+
+    for(int i = 0; i < pos - 2; i++) {
+        temp = temp->next;
+    }
+    temp->next = temp->next->next;
+
+    return head;
+}
+
+Node* insertAtParticularPosition(Node* head) {
+    int x, pos;
+    cout << "Enter the position at which you want to insert data: ";
+    cin >> pos;
+    if(pos == 1) {
+        return insertAtBeginning(head);
+    }
+
+    cout << "Enter the data to be inserted: ";
+    cin >> x;
+
+    Node* temp = head;
+
+    for(int i = 0; i < pos - 2; i++) {
+        temp = temp->next;
+    }
+    Node* newNode = new Node(x);
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+
+Node* reverse() {
+    
 }
 
 int main() {
