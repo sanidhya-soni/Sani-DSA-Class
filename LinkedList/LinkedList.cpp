@@ -139,10 +139,7 @@ Node* insertAtParticularPosition(Node* head) {
     Node* newNode = new Node(x);
     newNode->next = temp->next;
     temp->next = newNode;
-}
-
-Node* reverse() {
-    
+    return head;
 }
 
 int main() {
